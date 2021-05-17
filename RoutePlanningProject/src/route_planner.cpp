@@ -8,23 +8,21 @@ RoutePlanner::RoutePlanner(RouteModel &model, float start_x, float start_y, floa
     end_x *= 0.01;
     end_y *= 0.01;
 
-    // TODO 2: Use the m_Model.FindClosestNode method to find the closest nodes to the starting and ending coordinates.
+    // Use the m_Model.FindClosestNode method to find the closest nodes to the starting and ending coordinates.
     // Store the nodes you find in the RoutePlanner's start_node and end_node attributes.
     RoutePlanner::start_node = &m_Model.FindClosestNode(start_x, start_y);
     RoutePlanner::end_node = &m_Model.FindClosestNode(end_x, end_y);
 
 }
 
-// TODO 3: Implement the CalculateHValue method.
-
+// Implement the CalculateHValue method.
 float RoutePlanner::CalculateHValue(RouteModel::Node const *node) {
     //Use the distance method on node object to find the distance to the end_node for the h value.
     float h_value =  node->distance(*RoutePlanner::end_node);
     return h_value;
 }
 
-// TODO 4: Complete the AddNeighbors method to expand the current node by adding all unvisited neighbors to the open list.
-
+// Complete the AddNeighbors method to expand the current node by adding all unvisited neighbors to the open list.
 void RoutePlanner::AddNeighbors(RouteModel::Node *current_node) {
     //Use the FindNeighbors() method of the current_node to populate current_node.neighbors vector with all the neighbors.
     current_node->FindNeighbors();
@@ -42,8 +40,6 @@ void RoutePlanner::AddNeighbors(RouteModel::Node *current_node) {
     }
 }
 
-// TODO 5: Complete the NextNode method to sort the open list and return the next node.
-
 // Compare sub function which is used in NextNode member function
 bool fCompare(RouteModel::Node *a, RouteModel::Node *b){
     float f1 = a->h_value + a-> g_value;
@@ -51,6 +47,7 @@ bool fCompare(RouteModel::Node *a, RouteModel::Node *b){
     return(f1<f2);
 }
 
+// Complete the NextNode method to sort the open list and return the next node.
 RouteModel::Node *RoutePlanner::NextNode() {
     // Sort the open_list according to the sum of the h value and g value.
     std::sort(RoutePlanner::open_list.begin(), RoutePlanner::open_list.end(), fCompare);
@@ -63,8 +60,7 @@ RouteModel::Node *RoutePlanner::NextNode() {
 }
 
 
-// TODO 6: Complete the ConstructFinalPath method to return the final path found from your A* search.
-
+// Complete the ConstructFinalPath method to return the final path found from your A* search.
 std::vector<RouteModel::Node> RoutePlanner::ConstructFinalPath(RouteModel::Node *current_node) {
     // Create path_found vector
     distance = 0.0f;
@@ -93,12 +89,9 @@ std::vector<RouteModel::Node> RoutePlanner::ConstructFinalPath(RouteModel::Node 
 }
 
 
-// TODO 7: Write the A* Search algorithm here.
-
+// Write the A* Search algorithm here.
 void RoutePlanner::AStarSearch() {
     RouteModel::Node *current_node = nullptr;
-
-    // TODO: Implement your solution here.
     current_node = RoutePlanner::start_node;
     current_node->visited = true;
     RoutePlanner::open_list.push_back(current_node);
