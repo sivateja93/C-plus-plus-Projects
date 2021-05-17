@@ -1,18 +1,23 @@
 # Route Planning Project
 
-This repo contains the starter code for the Route Planning project.
+This repo contains the C++ code for the Route Planning project.
+
+In this project A star algorithm has been implemented to find the optimal path between two points on a map using real map data from OpenStreetMap project. The starter code provided by Udacity was used as base. Map in .osm format provided by Udacity is used in this project.
 
 <img src="map.png" width="600" height="450" />
+
+The program requests the coordinates of the desired start and goal point and the code automatically determines the nearby node in map and start to plan the path.
+<img src="input.png" width="600" height="450" />
 
 ## Cloning
 
 When cloning this project, be sure to use the `--recurse-submodules` flag. Using HTTPS:
 ```
-git clone https://github.com/sivateja93/C-plus-plus-Projects/blob/main/RoutePlanningProject.git --recurse-submodules
+git clone https://github.com/sivateja93/C-plus-plus-Projects/RoutePlanningProject.git --recurse-submodules
 ```
 or with SSH:
 ```
-git clone git@github.com:sivateja93/C-plus-plus-Projects/blob/main/RoutePlanningProject.git --recurse-submodules
+git clone git@github.com:sivateja93/C-plus-plus-Projects/RoutePlanningProject.git --recurse-submodules
 ```
 
 ## Dependencies for Running Locally
