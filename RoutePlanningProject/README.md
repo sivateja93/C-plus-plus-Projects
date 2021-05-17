@@ -7,7 +7,8 @@ In this project A star algorithm has been implemented to find the optimal path b
 <img src="map.png" width="600" height="450" />
 
 The program requests the coordinates of the desired start and goal point and the code automatically determines the nearby node in map and start to plan the path.
-<img src="input.png" width="600" height="200" />
+
+<img src="input.png" width="500" height="200" />
 
 ## Cloning
 
