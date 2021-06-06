@@ -34,3 +34,7 @@ This project uses [Make](https://www.gnu.org/software/make/). The Makefile has f
 ![Starting System Monitor](images/starting_monitor.png)
 
 4. Implement the `System`, `Process`, and `Processor` classes, as well as functions within the `LinuxParser` namespace.
+
+## Key learning: Object Oriented Programming
+
+Created classes for process, system and processor. Created objects for each of them. This made the code reusable and scalable for future works. 
